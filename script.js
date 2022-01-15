@@ -9,3 +9,9 @@ function loadTasks() {
     }
 }
 loadTasks();
+var currentDate = moment().format('LL');
+$( "p#currentDay").html(currentDate);
+$("button.saveBtn").click(saveTask);
+function saveTask() {
+    localStorage.setItem("task", JSON.stringify(task));
+};
