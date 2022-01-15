@@ -15,3 +15,15 @@ $("button.saveBtn").click(saveTask);
 function saveTask() {
     localStorage.setItem("task", JSON.stringify(task));
 };
+var presentHour = moment().format('h A');
+var timeHour = presentHour.text
+var hour = $("p.time-block").text();
+if (task = "") {
+    $("textarea.description").removeClass( "future", "past", "present");
+} else if (presentHour > timeHour) {
+    $("textarea.description").toggleClass( "past");
+} else if (presentHour < timeHour) {
+    $("textarea.description").toggleClass( "future");
+} else if (presentHour == timeHour) {
+    $("textarea.description").toggleClass( "present");
+};
